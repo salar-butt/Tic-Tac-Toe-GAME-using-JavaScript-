@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding:0
+}
+body{
+    background-image: url('https://media.istockphoto.com/id/1454104829/photo/love-is-a-game-of-tic-tac-toe-constantly-waiting-for-the-next-x-or-o.jpg?s=1024x1024&w=is&k=20&c=oyD-MbcrdOAADF3z_QXKnF0G1H7AXysVDHpNT3nV-58=');
+    background-size: 100% 100%;
+    height:100vh;
+    width:100vw
+}
+nav{
+    height:50px;
+    background-color: black;
+}
+ul{
+    list-style: none;
+    text-align: center  ;
+}
+li{
+color:white;
+font-size: 25px;
+word-spacing: 5px;
+padding:10px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.gamecontainer{
+    position: relative;
+    display: flex;
+    gap:4;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:50px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,7vw);
+    position: relative;
+}
+.line{
+    height:3px;
+    width:0vw;
+    /* transform: translate(3vw,18vw) rotate(0deg); */
+    transition: width 1s ease-in-out;
+    background-color: rgb(219, 17, 17);
+left:0;
+position: absolute;}
+.boxtext{
+    color:white
+}
+.info{
+    color:white;
+    font-size: 19px;
+}
+.box{
+    border:1px solid rgb(146, 24, 24);
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
+align-items: center;}
+.box:hover{
+    cursor: pointer;
+    background-color: rgb(109, 109, 109);
+}
+.gameinfo{
+    padding:0 34px;
+    margin-top:40px
+}
+.gameinfo>h1{
+color:white;
+font-size: 40px;
+}
+h1>span{
+    color:rgb(241, 196, 113)
+
+}
+.buttondiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.new {
+    display: block;
+}
+button{
+    margin-top: 10px;
+    position: relative;
+    height: 7vh;
+    border-radius: 50px;
+    color:rgb(243, 145, 64);
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    animation:animation 2s linear infinite alternate-reverse;
+    width:10vw;
+    background-color:rgb(226, 221, 221) ;
+    overflow: hidden;
+    transition: all 1s ease;
+    cursor: pointer;
+    z-index: 1;
+display: none;
+}
+@keyframes animation {
+    0%{
+box-shadow: -3px -3px 3px 5px rgb(120, 247, 247);
+    }
+    100%{
+        box-shadow: 3px 3px 3px 5px rgb(245, 218, 130);
+    }
+}
+button::after{
+    content: '';
+    height:5px;
+    position: absolute;
+    width:50%;
+    top:45%;
+    left:-50%;
+    background-color: #5e5c5c;
+    transition: all 1s ease;
+    z-index: -1;
+}
+button:hover::after{
+    cursor: pointer;
+    left:0%;
+    transition: all 1s ease;
+}
+button::before{
+    content: '';
+    height:5px;
+    position: absolute;
+    width:50%;
+    top:45%;
+    right:-50%;
+    z-index: -1;
+
+    background-color: #696868;
+    transition: all 1s ease;
+}
+button:hover::before{
+    cursor: pointer;
+    right:0%;
+    transition: all 1s ease;
+}
+.imgbox>img{
+width:0;
+transition: all 1s ease;
+
+}
+.bt-0{
+    border-top: 0;
+    
+}
+.bb-0{
+    border-bottom: 0;
+}
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+
+@media screen and (min-width:320px) and (max-width:500px) {
+    .gamecontainer{
+        flex: wrap;
+    }
+    .gameinfo{
+        margin-top: 34px;
+    }
+    .container{
+        grid-template-columns: repeat(3,20vw);
+        grid-template-rows: repeat(3,20vw);
+    }
+    .gameinfo>h1{
+        font-size: 35px;
+        text-align: center;
+        }
+        .box{
+            font-size: 20vw;
+        }
+        button{
+            width:30vw
+        }
+}
+
+@media screen and (min-width:501px) and (max-width:900px) {
+    .gamecontainer{
+        flex: wrap;
+    }
+    .gameinfo{
+        margin-top: 34px;
+    }
+    .container{
+        grid-template-columns: repeat(3,14vw);
+        grid-template-rows: repeat(3,14vw);
+    }
+    .gameinfo>h1{
+        font-size: 35px;
+        text-align: center;
+        }
+        .box{
+            font-size: 20vw;
+        }
+        button{
+            width:30vw
+        }
+}
+@media screen and (min-width:901px) and (max-width:1200px) {
+    .gamecontainer{
+        flex: wrap;
+    }
+    .gameinfo{
+        margin-top: 34px;
+    }
+    .container{
+        grid-template-columns: repeat(3,10vw);
+        grid-template-rows: repeat(3,10vw);
+    }
+    .gameinfo>h1{
+        font-size: 35px;
+        text-align: center;
+        }
+        .box{
+            font-size: 10vw;
+        }
+        button{
+            width:15vw
+        }
+}
